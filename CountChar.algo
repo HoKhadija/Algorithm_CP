@@ -1,0 +1,33 @@
+ALGORITHM Count_Char
+VAR
+    sentence : STRING ;
+    nb_char : INTEGER :=0;
+    nb_words : INTEGER :=1;
+    nb_vowels : INTEGER :=0;
+BEGIN
+    write("Type your sentence");
+    read(sentence);
+
+    IF (sentence = null) THEN
+        write("Enter a Valid sentence!");
+
+    ELSE 
+        WHILE (sentence[nb_char] <> ".") DO
+            nb_char := nb_char +1;
+            IF (sentence[nb_char] = " ") THEN
+                nb_words := nb_words +1;
+            END_IF
+
+            IF (sentence[nb_char] = "a" OR sentence[nb_char] = "e" OR sentence[nb_char] = "i" OR sentence[nb_char] = "o" OR
+            sentence[nb_char] = "u" OR sentence[nb_char] = "y") THEN
+                nb_vowels := nb_vowels +1;
+            END_IF
+
+        END_WHILE
+        nb_char := nb_char +1;
+    END_IF
+
+    write("Number of Words :", nb_words);
+    write("Number of Vowels :", nb_vowels);
+    write("Number of Character :", nb_char);
+END
